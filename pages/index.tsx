@@ -4,8 +4,12 @@ import Layout from "../components/Layout";
 
 const callApi = async () => {
   console.log("--call api --");
-  let resp = await Axios.post("/user");
-  console.log("--response : ", resp.data);
+  try {
+    let resp = await Axios.post("/user", {});
+    console.log("--response : ", resp.data);
+  } catch (e) {
+    console.log("--error : ", e);
+  }
 };
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
