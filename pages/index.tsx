@@ -3,9 +3,10 @@ import Link from "next/link";
 import Layout from "../components/Layout";
 
 const callApi = async () => {
-  console.log("--call api --");
+  console.log("--call api 100 --");
+  let data = {};
   try {
-    let resp = await Axios.post("/user", {});
+    let resp = await Axios.post("/user", JSON.stringify(data));
     console.log("--response : ", resp.data);
   } catch (e) {
     console.log("--error : ", e);
